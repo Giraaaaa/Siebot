@@ -2,7 +2,11 @@ from discord.ext import commands
 import praw
 import requests
 import json
-with open("stuff.json", 'r') as r:
+import os
+import os
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'stuff.json')
+with open(filename, 'r') as r:
     secrets = json.load(r)
 
 prefix = "!"
