@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from discord.ext import commands
 import praw
 import requests
