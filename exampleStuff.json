@@ -4,5 +4,6 @@
         "client_secret": "your_client_secret",
         "user_agent": "your_user_agent"
         },
-    "token": "your_token"
+    "token": "your_token",
+    "prefix": "your_prefix"
 }
