@@ -38,6 +38,11 @@ async def meme(ctx):
     await ctx.send(post.url)
 
 @bot.command()
+async def normie(ctx):
+    post = reddit.subreddit('THE_PACK').random()
+    await ctx.send(post.url)
+
+@bot.command()
 async def urban(ctx, word):
     api = "http://api.urbandictionary.com/v0/define"
     resp = requests.get(api, params=[("term", word)]).json()
