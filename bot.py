@@ -49,4 +49,9 @@ async def urban(ctx, word):
     if len(resp["list"]) == 0:
         await ctx.send("Word not found")
     await ctx.send(resp['list'][0]['definition'])
+@bot.command()
+async def xkcd(ctx):
+    api = "https://xkcd.com/info.0.json"
+    data = json.loads(requests.get(api).text)
+    await ctx.send(data['img'])
 bot.run(secrets['token'])
