@@ -11,8 +11,7 @@ filename = os.path.join(dirname, 'stuff.json')
 with open(filename, 'r') as r:
     secrets = json.load(r)
 
-prefix = "!"
-bot = commands.Bot(command_prefix=prefix)
+bot = commands.Bot(command_prefix=secrets['prefix'])
 reddit = praw.Reddit(client_id=secrets['reddit']['client_id'],
                      client_secret=secrets['reddit']['client_secret'],
                      user_agent=secrets['reddit']['user_agent'])
