@@ -13,10 +13,9 @@ with open(filename, 'r') as r:
 
 prefix = "!"
 bot = commands.Bot(command_prefix=prefix)
-reddit = praw.Reddit(client_id=secrets['client_id'],
-                     client_secret=secrets['client_secret'],
-                     user_agent=secrets['user_agent'])
-					 
+reddit = praw.Reddit(client_id=secrets['reddit']['client_id'],
+                     client_secret=secrets['reddit']['client_secret'],
+                     user_agent=secrets['reddit']['user_agent'])
 
 @bot.event
 async def on_ready():
