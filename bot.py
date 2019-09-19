@@ -5,7 +5,6 @@ import praw
 import requests
 import json
 import os
-import os
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, 'stuff.json')
 with open(filename, 'r') as r:
@@ -15,6 +14,11 @@ bot = commands.Bot(command_prefix=secrets['prefix'])
 reddit = praw.Reddit(client_id=secrets['reddit']['client_id'],
                      client_secret=secrets['reddit']['client_secret'],
                      user_agent=secrets['reddit']['user_agent'])
+
+initial_extensions = ['lol']
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        bot.load_extension(extension)
 
 @bot.event
 async def on_ready():
